@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170529184400) do
+ActiveRecord::Schema.define(version: 20170529224024) do
 
 # Could not dump table "pictures" because of following StandardError
 #   Unknown type 'has_many' for column 'user'
