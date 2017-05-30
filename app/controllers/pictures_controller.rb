@@ -28,13 +28,14 @@ class PicturesController < ApplicationController
     end
 
     def Snapshot
-        @array_pictures  = [Picture.all]
-        @random_no = rand(5)
-        @random_image = @array_pictures[@random_no]
+        # @array_pictures  = [Picture.all]
+        # @random_no = rand(5)
+        # @random_image = @array_pictures[@random_no]
+        @rand_picture= Picture.order('RAND()').limit(1)
     end
 
     private
        def picture_params
-       params.require(:picture).permit(:name, :attachment)
+       params.require(:picture).permit(:name, :memo, :attachment)
     end
 end

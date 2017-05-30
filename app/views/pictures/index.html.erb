@@ -1,4 +1,4 @@
-<h1>Pictures#index</h1>
+<h1>Picture Gallery</h1>
 
 
 
@@ -18,6 +18,7 @@
    <thead>.
       <tr>
          <th>Name</th>
+         <th>Memo</th>
          <th>Download Link</th>
          <th> </th>
       </tr>
@@ -28,6 +29,7 @@
 
          <tr>
             <td><%= picture.name %></td>
+            <td><%= picture.memo %></td>
             <td><%= link_to "Download Picture", picture.attachment_url %></td>
             <td><%= button_to "Delete",  picture, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{picture.name}?" %></td>
          </tr>

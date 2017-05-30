@@ -4,10 +4,6 @@ Rails.application.routes.draw do
   root "sessions#new"
 
 
-  #
-  #
-  get 'pictures/destroy'
-
 
 
 
