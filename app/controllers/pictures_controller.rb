@@ -28,6 +28,9 @@ class PicturesController < ApplicationController
     end
 
     def Snapshot
+        @array_pictures  = [Picture.all]
+        @random_no = rand(5)
+        @random_image = @array_pictures[@random_no]
     end
 
     private

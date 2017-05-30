@@ -10,10 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170529224024) do
+ActiveRecord::Schema.define(version: 20170530013030) do
 
-# Could not dump table "pictures" because of following StandardError
-#   Unknown type 'has_many' for column 'user'
+  create_table "pictures", force: :cascade do |t|
+    t.string "name"
+    t.string "attachment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
