@@ -30,7 +30,8 @@
          <tr>
             <td><%= picture.name %></td>
             <td><%= picture.memo %></td>
-            <td><%= link_to "Download Picture", picture.attachment_url %></td>
+            <td><%= link_to (image_tag picture.attachment_url (:thumb) if picture.attachment_url.present?), picture.attachment_url  %> </td>
+
             <td><%= button_to "Delete",  picture, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{picture.name}?" %></td>
          </tr>
 

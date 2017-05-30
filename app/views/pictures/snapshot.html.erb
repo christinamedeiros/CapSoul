@@ -1,13 +1,10 @@
-
+<body>
 <h1>Throwback</h1>
 
-<body>
+<td id="random"><%= image_tag @random.attachment, width: '50%' unless @random.attachment.nil? %></td></br>
+<h2><%= @random.memo %></h2>
 
-
-Displaying image <%= @random_image%>
-
-<img src="/assets<%= @random_image%>">
-
+<%= button_to "Randomize", snapshot_path, method: 'get' %>
 
 </body>
 </html>

@@ -1,4 +1,5 @@
 class PicturesController < ApplicationController
+
   def index
        @picture = Picture.all
     end
@@ -27,11 +28,17 @@ class PicturesController < ApplicationController
     def home
     end
 
-    def Snapshot
+    def snapshot
         # @array_pictures  = [Picture.all]
         # @random_no = rand(5)
         # @random_image = @array_pictures[@random_no]
-        @rand_picture= Picture.order('RAND()').limit(1)
+        # @rand_picture= Picture.order('RAND()').limit(1)
+        rand = Picture.all
+        @random = rand.sample
+        # Picture.all.each do |picture|
+        #   @random.push(picture)
+        # end
+        # @random_pic =
     end
 
     private
