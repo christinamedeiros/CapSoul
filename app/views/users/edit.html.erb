@@ -1,19 +1,18 @@
-<br>
 <h1> Update Your Profile </h1>
 
 <%= form_for @user do |f| %>
   <p>
   <%= f.label :first_name %><br>
-  <%= f.text_area :first_name %>
+  <%= f.text_field :first_name %>
   </p>
 
  <p>
   <%= f.label :last_name %><br>
-  <%= f.text_area :last_name %>
+  <%= f.text_field :last_name %>
   </p>
   <p>
   <%= f.label :email %><br>
-  <%= f.text_area :email %>
+  <%= f.text_field :email %>
   </p>
   <p>
   <%= f.submit %>

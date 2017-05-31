@@ -1,10 +1,17 @@
 <body>
 <h1>Throwback</h1>
 
-<td id="random"><%= image_tag @random.attachment, width: '50%' unless @random.attachment.nil? %></td></br>
-<h2><%= @random.memo %></h2>
+<%if @random.present? %>
 
+<td id="random"><%= image_tag @random.attachment, width: '50%' unless @random.attachment.nil? %></td></br>
+<h2><%= @random.name %></h2>
+<h5><%= @random.memo %></h5>
 <%= button_to "Randomize", snapshot_path, method: 'get' %>
+<%else%>
+<td> "No Pictures"</td>
+<%end%>
+
+
 
 </body>
 </html>
