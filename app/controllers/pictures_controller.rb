@@ -2,10 +2,18 @@ class PicturesController < ApplicationController
 
   def index
        @picture = Picture.all
+
+       @client= Aws::Rekognition::Client.new(
+         access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+         secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+       )
     end
 
     def new
        @picture = Picture.new
+    end
+
+    def show
     end
 
     def create
@@ -44,6 +52,6 @@ class PicturesController < ApplicationController
 
     private
        def picture_params
-       params.require(:picture).permit(:name, :memo, :attachment)
+       params.require(:picture).permit(:name, :memo, :category, :attachment)
     end
 end

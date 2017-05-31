@@ -15,11 +15,12 @@
 <br />
 
 <table class = "table table-bordered table-striped">
-   <thead>.
+   <thead>
       <tr>
          <th>Title</th>
          <th>Caption</th>
          <th>Photo</th>
+         <th>Category </th>
          <th> </th>
       </tr>
    </thead>
@@ -30,7 +31,16 @@
          <tr>
             <td><%= picture.name %></td>
             <td><%= picture.memo %></td>
-            <td><%= link_to (image_tag picture.attachment_url (:thumb) if picture.attachment_url.present?), picture.attachment_url  %> </td>
+            <td><%= link_to (image_tag picture.attachment_url (:thumb) if picture.attachment_url.present?), picture.attachment_url %> </td>
+            <td>
+
+              <% resp = @client.detect_labels(image: {bytes: File.read("public/#{picture.attachment_url}")})  %>
+              <% resp.labels.each do |label|%>
+              <%if label.confidence.to_i > 50 %>
+                  <b><%=  "#{label.name}-#{label.confidence.to_i}" %></b>
+              <% end %>
+              <% end %>
+  </td>
 
             <td><%= button_to "Delete",  picture, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{picture.name}?" %></td>
          </tr>
