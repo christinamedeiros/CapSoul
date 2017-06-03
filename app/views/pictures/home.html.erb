@@ -1,1 +1,17 @@
-<img id= capsoul src="/assets/CapSoul_Logo.png"  />
+<div class= "logo">
+
+<%= image_tag("/assets/CapSoul_Logo.png", class:"logo-img") %>
+
+
+
+<br>
+
+<div class= "options">
+    <%= link_to 'Upload Photo', '/upload', class: "btn btn-success center" %>
+    <br>
+    <%= link_to 'Gallery', pictures_path, class: "btn btn-warning center" %>
+    <br>
+    <%= link_to 'Throwback', snapshot_path, class: "btn btn-success2 purple center" %>
+</div>
+
+</div>

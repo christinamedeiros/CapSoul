@@ -1,0 +1,24 @@
+<div class = "container" style = "padding-top:20px;">
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+<!-- You can update your application layout file to show the user's name if they're logged in and some contextual links. -->
+ <% if current_user %>
+ Signed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %><br>
+ <%= link_to 'Edit Account', account_path %>
+ <%= link_to 'Home', home_path %>
+ <%= link_to 'Upload Photo', '/upload' %>
+ <%= link_to 'Gallery', pictures_path %>
+ <%= link_to 'Throwback', snapshot_path %>
+
+
+ <% else %>
+ <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+
+ <% end %>
+
+<p class="notice"><%= notice %></p>
+ <p class="alert"><%= alert %></p>
+
+   <%= yield %>
+</div>

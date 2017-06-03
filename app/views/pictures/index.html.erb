@@ -1,3 +1,7 @@
+<div class= "logo">
+
+<%= image_tag("/assets/CapSoul_Logo.png", class:"logo-img") %>
+</div>
 <h1>Photo Gallery</h1>
 
 
@@ -7,8 +11,7 @@
       <%= flash[:notice] %>
    </div>
 <% end %>
-
-<br />
+<br>
 
 <%= link_to "New Picture", new_picture_path, class: "btn btn-primary" %>
 <br />
@@ -36,7 +39,7 @@
 
               <% resp = @client.detect_labels(image: {bytes: File.read("public/#{picture.attachment_url}")})  %>
               <% resp.labels.each do |label|%>
-              <%if label.confidence.to_i > 50 %>
+              <%if label.confidence.to_i > 70 %>
                   <b><%=  "#{label.name}-#{label.confidence.to_i}" %></b>
               <% end %>
               <% end %>
